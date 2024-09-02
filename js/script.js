@@ -4,6 +4,7 @@ document.querySelector('#hamburger-menu').onclick = () => {
     navbarNav.classList.toggle('active');
 };
 
+
 // toggle class active search form
 const searchForm = document.querySelector('.search-form');
 const searchBox = document.querySelector('#search-box');
@@ -15,10 +16,12 @@ document.querySelector('#search-button').onclick = (e) => {
 };
 
 //toggle class active shopping card
-const searchCard = document.querySelector('.shoppingcart');
-document.querySelector('#shopping-cart-button').onclick = () => {
-    searchCard.classList.toggle('active');
-}
+const shoppingCart = document.querySelector('.shoppingcart');
+document.querySelector('#shopping-cart-button').onclick = (e) => {
+    shoppingCart.classList.toggle('active');
+    e.preventDefault();
+};
+
 
 // klick diluar elemen
 const hm = document.querySelector('#hamburger-menu');
@@ -35,8 +38,8 @@ document.addEventListener('click', function (e) {
         searchForm.classList.remove('active');
     }
 
-    if (!sc.contains(e.target) && !searchCard.contains(e.target)) {
-        searchCard.classList.remove('active');
+    if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
+        shoppingCart.classList.remove('active');
     }
 });
 
@@ -60,7 +63,7 @@ document.querySelector('.modal .close-icon').onclick = (e) => {
 
 // click diluar modal
 window.onclick = (e) => {
-    if (e.target == itemdetailmodal) {
+    if (e.target == itemDetailModal) {
         modal.style.display = 'none';
     }
 };
